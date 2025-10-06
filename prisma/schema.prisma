@@ -1,0 +1,34 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Person {
+  id             String       @id @default(cuid())
+  name           String       @unique
+  managerFlavor  String?
+  managerReason  String?
+  submissions    Submission[]
+  createdAt      DateTime     @default(now())
+}
+
+model Submission {
+  id        String   @id @default(cuid())
+  personId  String
+  person    Person   @relation(fields: [personId], references: [id], onDelete: Cascade)
+  flavor    String
+  reason    String
+  createdAt DateTime @default(now())
+  @@index([personId])
+}
+
+model SummaryCache {
+  id        String   @id @default(cuid())
+  personId  String   @unique
+  summary   String
+  updatedAt DateTime @updatedAt
+}
