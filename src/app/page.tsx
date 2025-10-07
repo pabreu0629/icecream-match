@@ -18,8 +18,10 @@ export default async function Page() {
   });
 
   const flavors = [
-    "Vanilla","Chocolate","Strawberry","Mint Chip","Cookie Dough","Rocky Road",
-    "Pistachio","Salted Caramel","Coffee","Cookies & Cream","Mango","Ube"
+    "Brown Butter Almond Brittle", "Brambleberry Crisp", "Gooey Butter Cake", "Nebula Berry",
+    "Miso Butterscotch Brownie", "Darkest Chocolate", "Pineapple Upside Down Cake",
+    "Powdered Jelly Donut", "Sweet Cream", "Strawberry Buttermilk", "Skillet Cinnamon Roll",
+    "Middle West Whiskey & Pecans", "Watermelon Taffy"
   ];
 
   return (
